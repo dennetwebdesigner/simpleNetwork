@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/master.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SimpleNetWork</h1>
+        <section class="search">
+            <img id='search-icon' alt="pesquisar pessoas" title="pesquisar pessoas">
+            <input type="text" id='search' placeholder="pesquisar pessoas">
+        </section>
+        <nav class="main-menu">
+            <img id="menu-icon" alt="">
+            <ul>
+                <li><a href="">linha do tempo</a></li>
+                <li><a href="">perfil</a></li>
+                <li>sair</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container">
+
+
+        <form id='create-post' class="create-post">
+            <textarea name="createNewPost"></textarea>
+            <input type='submit' value='adicionar a coleção'>
+        </form>
+
+
+        <ul id='allPosts'></ul>
+    </main>
+
+    <ul id="modal-menu">
+        <h1 id='close-modal-menu'>x</h1>
+        <li><a href="">linha do tempo</a></li>
+        <li><a href="">perfil</a></li>
+        <li>sair da conta</li>
+        <li id="back-modal-menu">voltar</li>
+    </ul>
+
+    <script src='./assets/js/javascript.js' type='module'></script>
+    <script src='./assets/js/timeLine/index.js' type='module'></script>
+
+    <!-- 
+    <script src="./assets/js/socketConfig.js" type="module"></script>
+    <script src="./assets/js/chat.js" type="module"></script> -->
+
+
+
+</body>
+
+</html>

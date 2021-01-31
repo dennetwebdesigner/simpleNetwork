@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/sign.css">
+</head>
+
+<body>
+    <div class='container'>
+        <header>
+            <h1>Seja bem-vindo</h1>
+            <h1 class="logo-mobile">SimpleNetWotk - entrar</h1>
+            <form id='login' class='form-login'>
+                <fieldset>
+                    <label for='username'>Usuário:</label>
+                    <input type='text' name='username' id='username' autocomplete='off'>
+                </fieldset>
+                <fieldset>
+                    <label for='password'>Senha:</label>
+                    <input type='password' id='password'>
+                </fieldset>
+            </form>
+        </header>
+        <main>
+            <section>
+                <h1>SimpleNetWork</h1>
+                <h2>Feita pensando em <span>VC</span></h2>
+            </section>
+            <aside>
+                <form id='register' class='form-register'>
+                    <h1>Criar Conta</h1>
+                    <fieldset>
+                        <label for='username'>Usuário:</label>
+                        <input type='text' name='username' id='username' autocomplete='off'>
+                    </fieldset>
+                    <fieldset>
+                        <label for='password'>Senha:</label>
+                        <input type='password' id='password'>
+                    </fieldset>
+                    <fieldset>
+                        <label for='confirm'>Confirme a senha:</label>
+                        <input type='password' id='confirm'>
+                    </fieldset>
+                    <fieldset>
+                        <article></article>
+                        <input type="submit" value="Entrar">
+                    </fieldset>
+                </form>
+            </aside>
+        </main>
+    </div>
+    <!-- <script src="./assets/js/sign/index.js" type="module"></script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container header {
+    height: 10%;
+    min-height: 130px;
+    padding: 10px;
+    background-color: #7220be;
+}
+
+.container header h1 {
+    font-weight: bolder;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.container header h1:first-child {
+    display: none
+}
+
+.container header form fieldset {
+    display: flex;
+    border: none;
+    margin: 0 auto;
+    margin-top: 3px;
+}
+
+.container header form fieldset label {
+    width: 70px;
+    font-size: 15pt;
+    font-weight: bolder;
+    margin-right: 10px;
+    color: white;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.container header form fieldset input {
+    width: 250px;
+    height: 30px;
+}
+
+.container main section {
+    display: none;
+}
+
+.container main aside {
+    width: 100%;
+    height: 100%;
+}
+
+.container main aside form {
+    width: 90%;
+    padding: 10px;
+    margin: 30px auto;
+}
+
+.container main aside form h1 {
+    margin: 10px 0 25px;
+    color: #7220be;
+    font-size: 25pt;
+}
+
+.container main aside form fieldset {
+    border: none;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.container main aside form fieldset label {
+    width: 100%;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.container main aside form fieldset input {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #7220be;
+    border-radius: 15px;
+}
+
+.container main aside form fieldset input[type='submit'] {
+    background-color: #13a833;
+    height: 60px;
+    font-size: 15pt;
+    color: white;
+    margin-top: 5px;
+}
+
+@media (min-width: 960px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "h" "m";
+    }
+    .container header {
+        grid-area: h;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+    }
+    .container header h1:first-child {
+        display: block;
+    }
+    .container header .logo-mobile {
+        display: none;
+    }
+    .container header form {
+        display: flex;
+    }
+    .container header form fieldset:first-child {
+        margin-right: 10px;
+    }
+    .container header form fieldset label {}
+    .container header form fieldset input {}
+    .container main {
+        background-color: #f1f1f1;
+        grid-area: m;
+        display: flex;
+        height: 90vh;
+        min-height: 691px;
+    }
+    .container main section {
+        display: block;
+        width: 55%;
+        padding: 10px;
+        height: 100%;
+    }
+    .container main section h1 {
+        text-align: center;
+        margin-left: -40px;
+        color: #7220be;
+        font-size: 600%;
+        margin-top: 30vh;
+    }
+    .container main section h2 {
+        text-align: right;
+        margin-left: 60px;
+        color: #e43b08;
+    }
+    .container main section h2 span {
+        color: #0b81af;
+    }
+    .container main aside {
+        width: 45%;
+        height: 100%;
+    }
+    .container main aside form {
+        width: 80%;
+        background-color: white;
+        box-shadow: 1px 1px 6px black;
+        padding: 10px;
+        margin: 200px auto;
+    }
+}

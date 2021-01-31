@@ -1,0 +1,220 @@
+header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #7220be;
+    color: white;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 {
+    margin: 10px auto;
+}
+
+header .search {
+    max-width: 950px;
+    width: 20vw;
+    min-width: 350px;
+    margin: 5px auto;
+    z-index: 1;
+}
+
+header .search #search-icon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    filter: invert(1);
+}
+
+header .search input {
+    width: 100%;
+    height: 40px;
+    padding: 3px 5px;
+}
+
+header nav {
+    margin-right: 7vw;
+}
+
+header nav img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 20px;
+    top: 13px;
+    filter: invert(1);
+}
+
+header nav ul {
+    list-style: none;
+    display: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+    font-size: 14pt;
+    color: white;
+    font-weight: bolder;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 14pt;
+    color: white;
+    font-weight: bolder;
+}
+
+#modal-menu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    transition: 1s;
+    background-color: white;
+    border: 1px solid #7220be;
+    display: none;
+    top: 0;
+    left: auto;
+    right: auto;
+    padding-left: 15px;
+    padding-top: 15px;
+    list-style: none;
+    z-index: 2;
+}
+
+#modal-menu h1 {
+    position: absolute;
+    right: 10px;
+    top: 1px;
+}
+
+#modal-menu li {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #7220be;
+}
+
+.content-container {
+    width: 100vw;
+    margin: auto;
+    height: 90vh;
+}
+
+.content-container .create-post {
+    width: 60%;
+    min-width: 325px;
+    background-color: white;
+    box-shadow: 0px 1px 1px #000;
+    margin: 20px auto 0;
+    list-style: none;
+    padding: 15px 15px 50px;
+    border-radius: 10px;
+}
+
+.content-container .create-post input {
+    float: right;
+    display: block;
+    padding: 15px;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #7220be;
+    background-color: white;
+    border: none;
+}
+
+.content-container .create-post input:hover {
+    cursor: pointer;
+    color: rgba(115, 33, 192, 0.6);
+}
+
+.content-container .create-post textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 13pt;
+    border: 1px solid #7220be;
+}
+
+.content-container ul {
+    min-width: 350px;
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+}
+
+.content-container ul li {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto 0;
+    list-style: none;
+    padding: 15px;
+    position: relative;
+}
+
+.content-container ul li section:first-child {
+    display: flex;
+    height: 25px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.content-container ul li .drop-actions-post p {
+    font-size: 15pt;
+    font-weight: bolder;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.content-container ul li .drop-actions-post .actions-post {
+    display: none;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    right: 35px;
+    box-shadow: 0px 1px 6px black;
+    padding: 5px 10px;
+}
+
+.content-container ul li .drop-actions-post .actions-post button {
+    background-color: none;
+    font-size: 12pt;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+    margin: 10px 0;
+}
+
+.content-container ul li .drop-actions-post:hover .actions-post {
+    display: block;
+}
+
+.content-container ul li .actions-post button {
+    background-color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 12pt;
+}
+
+.content-container ul li h3 button {
+    margin-right: 10px;
+    padding: 15px 25px;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    color: black;
+    background-color: #00ff40e1;
+}
+
+.content-container ul li h3 button:nth-child(2) {
+    color: white;
+    background-color: #f00;
+    padding: 15px 40px;
+}
