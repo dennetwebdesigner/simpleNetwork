@@ -15,10 +15,10 @@ const closeModalMenuElement = document.querySelector('#modal-menu h1')
 const backModalMenuElement = document.querySelector('#back-modal-menu')
 
 const searchInputElement = document.querySelector('#search')
-searchInputElement.style.display = 'none'
 
 searchIconElement.addEventListener('click', () => {
-    searchInputElement.style.display = searchInputElement.style.display == 'none' ? 'block' : 'none'
+    if (document.body.clientWidth < 960)
+        searchInputElement.style.display = searchInputElement.style.display == 'none' ? 'block' : 'none'
 })
 
 MenuIconElement.addEventListener('click', (element) => {

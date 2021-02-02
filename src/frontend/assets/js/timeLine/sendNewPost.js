@@ -6,7 +6,6 @@ export const sendNewPost = () => {
     const form = document.querySelector('#create-post')
     form.addEventListener('submit', e => {
         e.preventDefault()
-        console.log('click')
         const text = e.target.elements.createNewPost
 
         if (!text.value) {
@@ -61,6 +60,10 @@ const createPost = (allPosts, setItem, item) => {
     btnEditElement.addEventListener('click', e => {
         editPost(e, setItem, textElement)
     })
+
+    btnRemoveElement.addEventListener('click', e => {
+        deletePost(e, setItem, textElement)
+    })
 }
 
 export const setPostsHtml = () => {
@@ -68,8 +71,10 @@ export const setPostsHtml = () => {
     allPosts.innerHTML = ''
 
     data.forEach(item => {
-        const liElement = makeElement('li', allPosts, { setData: 'id', dataValue: `${item.id}` })
-        createPost(allPosts, liElement, item)
+        if (item != null) {
+            const liElement = makeElement('li', allPosts, { setData: 'id', dataValue: `${item.id}` })
+            createPost(allPosts, liElement, item)
+        }
     })
 
 }
@@ -115,4 +120,29 @@ export const editPost = (btn, setItem, content) => {
             content.textContent = backup
         })
     })
+}
+
+export const deletePost = (btn, setItem, content) => {
+
+    const backup = content.textContent
+    content.textContent = ''
+
+    let thisItem
+    const pElement = makeElement('p', content, { setContent: 'deseja excluir esse post?' })
+
+
+    const btnOkey = makeElement('button', content, { setClass: 'edit-post-okey', setContent: 'deletar' })
+    const btnCancel = makeElement('button', content, { setClass: 'edit-post-cancel', setContent: 'cancelar' })
+
+    btnOkey.addEventListener('click', () => {
+        thisItem = data.find(item => item.id == setItem.dataset.id)
+        data[thisItem.id - 1] = null
+        setItem.remove()
+
+    })
+
+    btnCancel.addEventListener('click', () => {
+        content.textContent = backup
+    })
+
 }
