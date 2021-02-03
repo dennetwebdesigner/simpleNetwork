@@ -1,8 +1,9 @@
 import Sequelize from 'sequelize'
 import dbConfig from '../config/database'
 
-const models = []
+import Models from '../app/models'
 
+const models = []
 class Database {
     constructor() {
         this.init()
@@ -12,7 +13,11 @@ class Database {
         this.connection = new Sequelize(dbConfig)
 
         if (models) {
-            models.map(model => model.init(this.connection))
+
+            Object.keys(Models).map((object, i) => {
+                const model = Object.values(Models)[i].default;
+                model.init(this.connection)
+            })
 
             models.forEach(model => {
                 if (model.associate)
