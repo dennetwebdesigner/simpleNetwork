@@ -59,9 +59,18 @@
 }
 
 .container main aside form h1 {
-    margin: 10px 0 25px;
+    margin: 10px 0 10px;
     color: #7220be;
     font-size: 25pt;
+}
+
+.container main aside form h4 {
+    display: none;
+    margin-bottom: 15px;
+    background-color: rgba(246, 0, 0, .7);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .container main aside form fieldset {
@@ -159,6 +168,6 @@
         background-color: white;
         box-shadow: 1px 1px 6px black;
         padding: 10px;
-        margin: 200px auto;
+        margin: 20px auto;
     }
 }
