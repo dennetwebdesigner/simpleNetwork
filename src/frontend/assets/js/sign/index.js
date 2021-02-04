@@ -1,4 +1,4 @@
 import sign from './Sign.js'
 
-console.log('aqui')
 sign.register('#register')
+sign.login('#login')
