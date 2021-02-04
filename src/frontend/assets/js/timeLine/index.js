@@ -1,7 +1,9 @@
 import { baseUrl } from '../helpers.js'
 import { setPostsHtml, sendNewPost, editPost } from './sendNewPost.js'
+import Authorization from '../authentication.js'
 
 
+Authorization.isLogged()
 setPostsHtml()
 
 // search icon

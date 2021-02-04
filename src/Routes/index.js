@@ -12,10 +12,11 @@ routes.get('/', (req, res) => res.json({ api: 'online' }))
 routes.post('/auth', authController.store)
 routes.post('/users', UsersController.store)
 
-routes.get('/users', UsersController.index)
+routes.post('/auth/validate', authController.show)
 
 routes.use(authMiddleware)
 
+routes.get('/users', UsersController.index)
 routes.get('/users/:id', UsersController.show)
 routes.put('/users/:id', UsersController.update)
 routes.delete('/users/:id', UsersController.destroy)
