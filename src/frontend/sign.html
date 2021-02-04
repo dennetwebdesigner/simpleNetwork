@@ -18,11 +18,14 @@
             <form id='login' class='form-login'>
                 <fieldset>
                     <label for='username'>Usuário:</label>
-                    <input type='text' name='username' id='username' autocomplete='off'>
+                    <input type='text' name='username' id='username'>
                 </fieldset>
                 <fieldset>
                     <label for='password'>Senha:</label>
                     <input type='password' id='password'>
+                </fieldset>
+                <fieldset>
+                    <input type="submit" value='entrar'>
                 </fieldset>
             </form>
         </header>
@@ -34,27 +37,45 @@
             <aside>
                 <form id='register' class='form-register'>
                     <h1>Criar Conta</h1>
+                    <h4 id='msg-log'></h4>
                     <fieldset>
-                        <label for='username'>Usuário:</label>
-                        <input type='text' name='username' id='username' autocomplete='off'>
+                        <label for='firstname'>Nome:</label>
+                        <input type='text' name='firstname' id='firstname'>
+                    </fieldset>
+                    <fieldset>
+                        <label for='lastname'>Sobrenome:</label>
+                        <input type='text' name='lastname' id='lastname'>
+                    </fieldset>
+                    <fieldset>
+                        <label for='birthday'>Data de aniversário:</label>
+                        <input type='text' name='birthday' id='birthday'>
+                    </fieldset>
+                    <fieldset>
+                        <label for='email'>E-mail:</label>
+                        <input type='email' name='email' id='email'>
+                    </fieldset>
+                    <fieldset>
+                        <label for='username'>nome de usuário:</label>
+                        <input type='text' name='username' id='username'>
                     </fieldset>
                     <fieldset>
                         <label for='password'>Senha:</label>
-                        <input type='password' id='password'>
+                        <input type='password' name='password' id='password'>
                     </fieldset>
-                    <fieldset>
+                    <!-- <fieldset>
                         <label for='confirm'>Confirme a senha:</label>
                         <input type='password' id='confirm'>
-                    </fieldset>
+                    </fieldset> -->
                     <fieldset>
                         <article></article>
-                        <input type="submit" value="Entrar">
+                        <input type="submit" value="Cadastrar">
                     </fieldset>
                 </form>
             </aside>
         </main>
     </div>
-    <!-- <script src="./assets/js/sign/index.js" type="module"></script> -->
+
+    <script src="./assets/js/sign/index.js" type="module"></script>
 
 </body>
 
