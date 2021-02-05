@@ -1,5 +1,7 @@
 export const baseUrl = 'http://localhost:3000'
 
+export const siteTitleLogo = ' Simple NetWork '
+
 export const backgroundColor = '#fff'
 
 export const makeElement = (html, setElement, att = null) => {
@@ -16,6 +18,5 @@ export const makeElement = (html, setElement, att = null) => {
     setElement.append(newElement)
 
     return newElement
-
 
 }

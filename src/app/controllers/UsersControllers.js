@@ -46,10 +46,9 @@ class UsersController {
     }
 
     // created new user in db
-    async store(req, res) {
+    async store(req, res, next) {
 
         // return res.json(req.body.firstname)
-        console.log(req.body)
         const { firstname, lastname, birthday, username, email, password } = req.body
 
         if (!firstname || !lastname || !birthday || !username || !email || !password) {
@@ -57,6 +56,7 @@ class UsersController {
         }
 
         try {
+
             const userName = await User.findOne({ where: { username }, attributes: ['id'] })
             const userEmail = await User.findOne({ where: { email }, attributes: ['id'] })
 
@@ -69,11 +69,12 @@ class UsersController {
                     username,
                     email,
                     password_hash: password
-                })) return res.json({})
-
+                })) {
+                return res.json({})
+            }
 
         } catch (error) {
-            return res.status(500).json({ error })
+            return res.status(500).json({})
         }
 
     }

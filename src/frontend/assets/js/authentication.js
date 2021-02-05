@@ -18,7 +18,7 @@ class Authentication {
 
         api.onreadystatechange = () => {
 
-            if (api.status == 401 || api.status == 400) {
+            if (api.status != 200) {
                 window.location.href = '/entrar'
                 return false
             }
