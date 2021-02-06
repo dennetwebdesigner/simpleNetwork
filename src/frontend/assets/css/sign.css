@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 20px 0;
 }
 
 main {
@@ -41,13 +41,9 @@ main aside {
     width: 100%;
     position: relative;
     padding-top: 20px;
-    height: 55vh;
-    overflow-y: auto;
 }
 
-main aside form {
-    overflow-y: auto;
-}
+main aside form {}
 
 #switch-form {
     display: flex;
@@ -132,36 +128,49 @@ main aside form fieldset input[type='submit'] {
     margin-top: 5px;
 }
 
-@media (min-width: 960px) {
-    main aside form {
-        width: 50%
+@media (min-width: 600px) {
+    body {
+        padding: 0;
+    }
+    main {
+        margin: 25px 0;
     }
 }
 
-@media (min-width: 1280px) {
-    main {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: "h" "m";
-    }
+@media (min-width: 960px) {
     main {
         background-color: #f1f1f1;
-        grid-area: m;
         display: flex;
+        width: 80%;
+        max-width: 960px;
+        align-items: center;
     }
     main section {
-        display: block;
+        display: flex;
         width: 55%;
         padding: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     main aside {
         width: 45%;
+        height: 55vh;
+        overflow-y: auto;
+    }
+    main section h1 {
+        font-size: 3em;
+        margin-left: 0;
+    }
+    main section h2 {
+        margin-left: 99px;
     }
     main aside form {
-        width: 60%;
-        background-color: white;
-        box-shadow: 1px 1px 6px black;
-        padding: 10px;
-        margin: 20px auto;
+        width: 80%;
+        padding: 60px 10px 10px;
+        margin: 70px auto 20px;
+    }
+    main aside form#register {
+        padding-top: 20px;
+        margin: 10px auto;
     }
 }
