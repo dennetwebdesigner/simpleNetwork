@@ -1,8 +1,32 @@
 import jwt from 'jsonwebtoken'
 import authConfig from '../../config/authConfig'
 import User from '../models/User'
+import { promisify } from 'util'
+import jwt from 'jsonwebtoken'
 
 class AuthController {
+
+    async show(req, res) {
+        const authHeader = req.headers.authorization
+
+        if (!authHeader) return res.status(400).json({ error: 'token not Provided!' })
+        const [, token] = authHeader.split(' ')
+
+        try {
+            const decoded = await promisify(jwt.verify)(token, authConfig.secret)
+
+            req.userId = decoded.id
+
+            return res.json({})
+
+        } catch (error) {
+
+            console.log()
+
+            return res.status(401).json({ error: 'token invalid' })
+
+        }
+    }
 
     async store(req, res) {
 

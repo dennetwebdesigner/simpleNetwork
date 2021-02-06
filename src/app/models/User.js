@@ -9,6 +9,7 @@ class User extends Model {
             birthday: DataTypes.STRING,
             username: DataTypes.STRING,
             email: DataTypes.STRING,
+            image: DataTypes.STRING,
             password: DataTypes.STRING,
             password_hash: DataTypes.VIRTUAL
         }, { sequelize })
@@ -21,6 +22,10 @@ class User extends Model {
 
     async password_check(password) {
         return await bcrypt.compare(password, this.password)
+    }
+
+    static associate(models) {
+        this.hasMany(models.Post, { foreignKey: 'user_id', as: 'posts' })
     }
 }
 

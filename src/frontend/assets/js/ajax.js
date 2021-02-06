@@ -6,7 +6,7 @@ class Api {
         this.connection = new XMLHttpRequest();
     }
 
-    async conne(url) {
+    async get(url) {
         this.connection.open('GET', `${baseUrl}/api${url}`)
         this.connection.send()
         return this.connection

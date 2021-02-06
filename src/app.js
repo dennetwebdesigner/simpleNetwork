@@ -1,4 +1,5 @@
 import express from 'express'
+import bodyParser from 'body-parser'
 import cors from 'cors'
 import chatSocket from './websocket/chat'
 import { routes } from './Routes'
@@ -20,9 +21,13 @@ class App {
         chatSocket(this.server)
 
     }
+
     routes() {
-        this.app.use(express.json())
+
+        this.app.use(express.urlencoded({ extended: true }));
+        this.app.use(express.json());
         this.app.use('/api', routes)
+
     }
     views() {
         this.app.use('/', RouteViews)

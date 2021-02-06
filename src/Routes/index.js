@@ -1,23 +1,23 @@
 import { Router } from 'express'
-import authMiddleware from '../app/middlewares/auth'
+import group from './api/index'
+
 
 const routes = new Router()
 
-import UsersController from '../app/controllers/UsersControllers'
-import authController from '../app/controllers/AuthController'
-
 
 routes.get('/', (req, res) => res.json({ api: 'online' }))
+    // routes.post('/test', (req, res) => {
+    //     req.
+    // })
 
-routes.post('/auth', authController.store)
-routes.post('/users', UsersController.store)
+// routes.use('/auth', group.authRouter.routes)
+// routes.use('/users', group.userRouter.routes)
 
-routes.get('/users', UsersController.index)
+Object.keys(group).forEach((response, index) => {
+    const element = Object.values(group)[index]
+    routes.use(`/${element.path}`, element.routes)
+})
 
-routes.use(authMiddleware)
 
-routes.get('/users/:id', UsersController.show)
-routes.put('/users/:id', UsersController.update)
-routes.delete('/users/:id', UsersController.destroy)
 
 export { routes }

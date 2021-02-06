@@ -20,13 +20,13 @@ pathFiles.map(({ path, file }) => {
     app.use(path, (req, res) => res.render(`${file}.html`))
 })
 
-app.use(function(req, res, next) {
-    let err = new Error('Not Found');
-    if (err) {
-        err.status = 404
-        next(err)
-    }
-});
+// app.use(function(req, res, next) {
+//     let err = new Error('Not Found');
+//     if (err) {
+//         err.status = 404
+//         next(err)
+//     }
+// });
 
 app.use('/', (req, res) => {
     res.render('index.html')
