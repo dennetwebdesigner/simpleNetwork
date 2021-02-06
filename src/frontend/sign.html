@@ -12,6 +12,10 @@
 
 <body>
 
+    <section id="notification">
+        <p>Cadastro realizado com sucesso</p>
+    </section>
+
     <main>
         <section>
             <h1>SimpleNetWork</h1>
@@ -40,7 +44,6 @@
 
 
             <form id='register' class='form-register'>
-                <h4 id='msg-log'></h4>
                 <fieldset>
                     <label for='firstname'>Nome:</label>
                     <input type='text' name='firstname' id='firstname'>
@@ -80,27 +83,6 @@
 
 
     <script src="./assets/js/sign/index.js" type="module"></script>
-    <script>
-        const register = document.querySelector('#switch-register')
-        const login = document.querySelector('#switch-login')
-
-        const formLogin = document.querySelector('#login')
-        const formRegister = document.querySelector('#register')
-
-        login.addEventListener('click', () => {
-            login.classList.add('switch-form-active')
-            register.classList.remove('switch-form-active')
-            formLogin.style.display = 'block'
-            formRegister.style.display = 'none'
-        })
-
-        register.addEventListener('click', () => {
-            register.classList.add('switch-form-active')
-            login.classList.remove('switch-form-active')
-            formRegister.style.display = 'block'
-            formLogin.style.display = 'none'
-        })
-    </script>
 
 </body>
 
