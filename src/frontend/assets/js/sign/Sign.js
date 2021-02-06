@@ -74,7 +74,7 @@ class Sign {
                 birthday.value = ''
                 username.value = ''
                 email.value = ''
-                    .value password.value = ''
+                password.value = ''
                 return true
             }
 
