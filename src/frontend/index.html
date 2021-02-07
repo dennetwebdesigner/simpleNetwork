@@ -16,18 +16,52 @@
 
     <main class="content-container">
 
-        <form id='create-post' class="create-post">
-            <textarea name="createNewPost"></textarea>
-            <input type='submit' value='adicionar a coleção'>
-        </form>
+        <nav>
+            <div class="active" id='timeline-display'><img id="timeline-icon" alt=""></div>
+            <div id='profile-display'><img id='profile-icon' alt=""></div>
+        </nav>
 
+        <div id='profile'>
+            <div class="header-card">
+                <div>
+                    <h4>Joatan Dennet</h4>
+                    <h5>Data de Nascimento: 10 - 12 - 1991</h5>
+                </div>
+            </div>
+            <img id='avatar-user' class='avatar-user'>
+            <div class='body-card'>
+                <article>
+                    <h4>1013</h4>
+                    <span>observando</span>
+                </article>
+                <article>
+                    <h4>1013</h4>
+                    <span>observado por</span>
+                </article>
+            </div>
+            <ul id='switch-follow'>
+                <h4>observar</h4>
+                <li>O</li>
+                <li>X</li>
+            </ul>
+        </div>
 
-        <ul id='allPosts'></ul>
+        <div id='home'>
+            <form id='create-post' class="create-post">
+                <textarea name="createNewPost"></textarea>
+                <input type='submit' value='adicionar a coleção'>
+            </form>
+
+            <ul id='allPosts'></ul>
+        </div>
+
     </main>
 
 
     <script src='./assets/js/menu.js' type='module'></script>
     <script src='./assets/js/timeLine/index.js' type='module'></script>
+    <script src="./assets//js//displays-mobile.js"></script>
+
 
     <!-- 
     <script src="./assets/js/socketConfig.js" type="module"></script>
