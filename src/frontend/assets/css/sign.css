@@ -113,6 +113,7 @@ main form p {
     font-family: 'Noto Sans', sans-serif;
     font-size: 12px;
     color: #0C80AF;
+    cursor: pointer;
 }
 
 main form input[type='submit'] {
@@ -121,7 +122,7 @@ main form input[type='submit'] {
 
 main form #login-display {
     margin: 30px 0 0px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 main form #register-display {
@@ -165,4 +166,31 @@ main .items-controller .active {
 
 .items-controller div:nth-child(1) {
     margin-right: 10px;
+}
+
+@media screen and (min-width: 960px) {
+    #notification {
+        top: 178px;
+        left: 54%;
+    }
+    main {
+        display: flex;
+        align-items: center;
+    }
+    main section {
+        display: block;
+    }
+    main section h1 {}
+    main form {
+        width: 80%;
+        margin-right: 20px;
+        overflow-y: auto;
+        max-height: 353px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    main {
+        max-width: 960px;
+    }
 }
