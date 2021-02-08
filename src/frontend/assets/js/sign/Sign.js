@@ -31,7 +31,13 @@ class Sign {
         const password = e.target.elements.password
 
         // if inputs return false set validate in element message error
-        if (!firstname || !lastname || !birthday || !username || !email || !password) {
+        if (!firstname.value ||
+            !lastname.value ||
+            !birthday.value ||
+            !username.value ||
+            !email.value ||
+            !password.value
+        ) {
             MessagegLog.error('Não pode haver campos vazios!')
             return false
         }
