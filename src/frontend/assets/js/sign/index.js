@@ -1,24 +1,20 @@
 import sign from './Sign.js'
 
+const items = document.querySelector('#items')
 
-const register = document.querySelector('#switch-register')
-const login = document.querySelector('#switch-login')
+const next = document.querySelector('#register-display')
+const previos = document.querySelector('#login-display')
 
-const formLogin = document.querySelector('#login')
-const formRegister = document.querySelector('#register')
+items.addEventListener('mouseenter', (e) => {
+    next.addEventListener('click', event => {
+        console.log('test')
+        e.target.scrollBy(300, 0)
+    })
 
-login.addEventListener('click', () => {
-    login.classList.add('switch-form-active')
-    register.classList.remove('switch-form-active')
-    formLogin.style.display = 'block'
-    formRegister.style.display = 'none'
-})
-
-register.addEventListener('click', () => {
-    register.classList.add('switch-form-active')
-    login.classList.remove('switch-form-active')
-    formRegister.style.display = 'block'
-    formLogin.style.display = 'none'
+    previos.addEventListener('click', event => {
+        e.target.scrollBy(-300, 0)
+        console.log('test')
+    })
 })
 
 sign.register('#register')
