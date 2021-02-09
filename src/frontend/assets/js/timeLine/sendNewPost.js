@@ -2,7 +2,6 @@ import { makeElement } from '../helpers.js'
 import Api from '../ajax.js'
 
 const connection = new Api()
-let data = []
 
 export const sendNewPost = () => {
     const form = document.querySelector('#create-post')
@@ -23,14 +22,6 @@ export const sendNewPost = () => {
             key: "Authorization",
             value: `Bearer ${window.localStorage.getItem('token')}`
         })
-
-        const newData = {
-            id: data.length + 1,
-            id_user: 10,
-            username: 'joatandennet',
-            text: text.value,
-            date: '10-12-1991 às 19:30:25'
-        }
 
         api.onreadystatechange = async() => {
             if (api.status == 400)

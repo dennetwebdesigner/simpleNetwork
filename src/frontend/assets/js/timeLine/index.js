@@ -1,7 +1,7 @@
 import { baseUrl } from '../helpers.js'
 import { setPostsHtml, sendNewPost, editPost } from './sendNewPost.js'
 import Authorization from '../authentication.js'
-
+import { setProfile } from './profile.js'
 
 
 const iconProfile = document.querySelector('#profile-icon')
@@ -9,12 +9,10 @@ iconProfile.src = `${baseUrl}/static/image/icon-profile.png`
 const iconTimeline = document.querySelector('#timeline-icon')
 iconTimeline.src = `${baseUrl}/static/image/icon-timeline.png`
 
-const imageProfile = document.querySelector('#avatar-user')
-imageProfile.src = `${baseUrl}/static/image/joatanp-perfil.jpg`
-
-
 
 Authorization.isLogged()
+setProfile()
+
 
 setPostsHtml()
 
