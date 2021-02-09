@@ -8,6 +8,7 @@ routes.use(authMiddleware)
 
 routes.post('/', PostsController.store)
 routes.get('/', PostsController.index)
+routes.get('/:id', PostsController.show)
 
 const path = 'posts'
 

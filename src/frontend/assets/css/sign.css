@@ -180,7 +180,6 @@ main .items-controller .active {
     main section {
         display: block;
     }
-    main section h1 {}
     main form {
         width: 80%;
         margin-right: 20px;
