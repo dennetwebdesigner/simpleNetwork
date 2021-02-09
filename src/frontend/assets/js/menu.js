@@ -12,7 +12,9 @@ const menu = () => {
 
     const header = document.querySelector('header')
 
-    makeElement('h1', header, { setContent: siteTitleLogo })
+    const logoConteiner = makeElement('div', header, { setClass: 'logo-container' })
+
+    makeElement('h1', logoConteiner, { setContent: siteTitleLogo })
 
     const section = makeElement('section', header, { setClass: 'search' })
 

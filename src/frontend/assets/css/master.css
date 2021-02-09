@@ -419,71 +419,83 @@ header nav ul li a {
 }
 
 @media (min-width: 960px) {
-    header h1 {
-        margin-left: 8%;
-        margin-right: 2%;
-    }
     header .search #search-icon {
         display: none;
-    }
-    header .search input {
-        display: block;
-        width: 100%;
-        margin-left: -8%;
-        margin-top: -15px;
-    }
-    header nav {
-        margin-right: 0;
     }
     header nav img {
         display: none;
     }
-    header nav ul {
-        display: block;
+    .content-container #profile {
         display: flex;
+    }
+    header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-areas: "logo" "search" "menu";
+        align-items: center;
+        justify-content: center;
+    }
+    header .logo-container {
+        display: flex;
+        grid-area: "logo";
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    header h1 {
+        width: 194px;
+        margin: 0 auto;
+    }
+    header .search {
+        grid-area: "search";
+        width: 100%;
+        text-align: center;
+        margin: 12px auto 0;
+    }
+    header .search input {
+        display: block;
+        margin: 0 auto;
+    }
+    header nav {
+        display: block;
+        grid-area: "menu";
+        width: 100%;
+    }
+    header nav ul {
+        justify-content: center;
+        display: flex;
+        text-align: right;
     }
     .content-container {
         width: 100%;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-areas: "logo" "search" "menu";
         justify-content: center;
+        overflow-y: auto;
         height: auto;
-        margin-bottom: 40px;
     }
     .content-container nav {
         display: none;
     }
     .content-container #profile {
-        display: flex;
-        margin: 21px 5% 0 1.8%;
-        width: 39%;
-        max-width: 322px;
-        position: absolute;
-        border-radius: 15px;
-        max-height: 100vh;
+        margin: 19px auto;
+        width: 80%;
+        max-width: 307px;
     }
     .content-container #home {
         overflow-y: hidden;
-        width: 50%;
-        margin: 0 auto 15px;
-    }
-    .content-container .create-post {
-        box-shadow: none;
         width: 100%;
     }
-    .content-container ul {
+    .content-container #home .create-post {
         width: 100%;
     }
-}
-
-@media (min-width: 1366px) {
-    header .search {
-        margin: 18px auto 0;
-        margin-left: 20%;
-    }
-    .content-container {
+    .content-container #home .create-post {
         width: 100%;
     }
-    .content-container #profile {
-        left: 0%;
+    .content-container #home ul {
+        width: 100%;
     }
 }
