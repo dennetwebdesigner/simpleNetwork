@@ -1,4 +1,4 @@
-import { makeElement } from '../helpers.js'
+import { baseUrl, makeElement } from '../helpers.js'
 import Api from '../ajax.js'
 
 const connection = new Api()
@@ -33,7 +33,6 @@ export const sendNewPost = () => {
                 if (api.readyState == 4) {
                     setPostsHtml()
                 }
-
             }
         }
 
@@ -75,11 +74,11 @@ const createPost = async(allPosts, item) => {
     })
 
     btnEditElement.addEventListener('click', e => {
-        editPost(e, setItem, textElement, )
+        editPost(e, liElement, textElement)
     })
 
     btnRemoveElement.addEventListener('click', e => {
-        deletePost(e, setItem, textElement)
+        deletePost(e, liElement, textElement)
     })
 }
 
@@ -111,12 +110,14 @@ export const editPost = (btn, setItem, content) => {
     content.textContent = ''
 
     const formElement = makeElement('form', content, { setClass: 'create-post' })
-    const textareaElement = makeElement('textarea', formElement, { setContent: data[setItem.dataset.id - 1].text })
+    const textareaElement = makeElement('textarea', formElement, { setContent: backup })
     const inputElement = makeElement('input', formElement, { setContent: 'Editar' })
     inputElement.type = 'submit'
+    const btnCancelbefore = makeElement('button', formElement, { setClass: 'edit-post-cancel', setContent: 'cancelar' })
 
-
-    let thisItem
+    btnCancelbefore.addEventListener('click', () => {
+        content.textContent = backup
+    })
 
     formElement.addEventListener('submit', e => {
         e.preventDefault()
@@ -131,19 +132,24 @@ export const editPost = (btn, setItem, content) => {
         const btnOkey = makeElement('button', content, { setClass: 'edit-post-okey', setContent: 'sim' })
         const btnCancel = makeElement('button', content, { setClass: 'edit-post-cancel', setContent: 'não' })
 
-        btnOkey.addEventListener('click', () => {
-            thisItem = data.find(item => item.id == setItem.dataset.id)
-            thisItem.text = textareaElement.value
-            setItem.textContent = ''
-            createPost(allPosts, setItem, thisItem)
+        btnOkey.addEventListener('click', async() => {
+
+            const connection = new Api()
+            const setUpdate = await connection.commom('PUT', `/posts/${setItem.dataset.id}`, { text: textareaElement.value }, {
+                key: "Authorization",
+                value: `Bearer ${window.localStorage.getItem('token')}`
+            })
+
+            setUpdate.onreadystatechange = async() => {
+                if (setUpdate.readyState == 4) {
+                    if (setUpdate.status == 200) {
+                        content.textContent = textareaElement.value
+                    }
+                }
+            }
         })
 
         btnCancel.addEventListener('click', () => {
-            formElement.remove()
-            pElement.remove()
-            btnOkey.remove()
-            btnCancel.remove()
-            console.log(backup)
             content.textContent = backup
         })
     })
@@ -154,17 +160,25 @@ export const deletePost = (btn, setItem, content) => {
     const backup = content.textContent
     content.textContent = ''
 
-    let thisItem
-    const pElement = makeElement('p', content, { setContent: 'deseja excluir esse post?' })
-
+    makeElement('p', content, { setContent: 'deseja excluir esse post?' })
 
     const btnOkey = makeElement('button', content, { setClass: 'edit-post-okey', setContent: 'sim' })
     const btnCancel = makeElement('button', content, { setClass: 'edit-post-cancel', setContent: 'não' })
 
-    btnOkey.addEventListener('click', () => {
-        thisItem = data.find(item => item.id == setItem.dataset.id)
-        data[thisItem.id - 1] = null
-        setItem.remove()
+    btnOkey.addEventListener('click', async() => {
+        const connection = new Api()
+        const setDelete = await connection.commom('DELETE', `/posts/${setItem.dataset.id}`, {}, {
+            key: "Authorization",
+            value: `Bearer ${window.localStorage.getItem('token')}`
+        }, true)
+
+        setDelete.onreadystatechange = async() => {
+            if (setDelete.readyState == 4) {
+                if (setDelete.status == 200) {
+                    setItem.remove()
+                }
+            }
+        }
 
     })
 

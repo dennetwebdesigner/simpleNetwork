@@ -84,7 +84,7 @@ class UsersController {
 
         const { id } = req.params
 
-        if (!req.body) return res.status(400).json({})
+        if (!req.body.text) return res.status(400).json({})
 
         try {
 
@@ -92,7 +92,7 @@ class UsersController {
 
             if (!user) return res.status(404).json({})
 
-            if (await user.update(req.body)) return res.json({})
+            if (await user.update({ text: req.body.text })) return res.json({})
 
         } catch (error) {
 
@@ -122,9 +122,6 @@ class UsersController {
         }
 
     }
-
-
-
 
 }
 

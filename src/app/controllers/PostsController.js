@@ -17,7 +17,7 @@ class PostsController {
                 order: [
                     ['updated_at', 'DESC']
                 ],
-                attributes: ['text', 'created_at', 'updated_at'],
+                attributes: ['id', 'text', 'created_at', 'updated_at'],
                 include: {
                     association: 'user',
                     attributes: ['id', 'firstname', 'lastname']
@@ -88,6 +88,54 @@ class PostsController {
 
         } catch (error) {
             res.status(500).json({})
+        }
+
+    }
+
+    // update post in db with id 
+    async update(req, res) {
+
+        const { id } = req.params
+        const user_id = req.userId
+
+        if (!id) return res.status(400).json({})
+
+        try {
+
+            const post = await Post.findOne({ where: { id, user_id } })
+
+            if (!post) return res.status(404).json({})
+
+            if (await post.update(req.body)) return res.json({})
+
+        } catch (error) {
+
+            return res.status(500).json({ error })
+
+        }
+
+    }
+
+    // delete post in db with id 
+    async destroy(req, res) {
+
+        const { id } = req.params
+        const user_id = req.userId
+
+        if (!id) return res.status(400).json({})
+
+        try {
+
+            const post = await Post.findOne({ where: { id, user_id } })
+
+            if (!post) return res.status(404).json({})
+
+            if (await post.destroy()) return res.json({})
+
+        } catch (error) {
+
+            return res.status(500).json({ error })
+
         }
 
     }

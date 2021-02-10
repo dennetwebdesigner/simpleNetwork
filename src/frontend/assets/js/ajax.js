@@ -24,6 +24,22 @@ class Api {
         return xmlhttp
     }
 
+    async commom(flag, url, data = null, auth = null, permission = null) {
+        const xmlhttp = new XMLHttpRequest(); // new HttpRequest instance 
+        if (permission)
+            xmlhttp.open(flag, `${baseUrl}/api${url}`, true)
+        else
+            xmlhttp.open(flag, `${baseUrl}/api${url}`)
+
+
+        xmlhttp.setRequestHeader("Content-Type", "application/json");
+        if (auth)
+            xmlhttp.setRequestHeader(auth.key, auth.value);
+        if (data)
+            xmlhttp.send(JSON.stringify(data));
+        return xmlhttp
+    }
+
 }
 
 export default Api
