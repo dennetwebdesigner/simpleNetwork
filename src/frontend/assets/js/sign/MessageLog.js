@@ -1,4 +1,4 @@
-class MessagegLog {
+class MessageLog {
 
     constructor() {
         this.element = document.querySelector('#notification')
@@ -22,4 +22,4 @@ class MessagegLog {
 
 }
 
-export default new MessagegLog()
+export default new MessageLog()

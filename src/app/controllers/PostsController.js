@@ -15,7 +15,7 @@ class PostsController {
 
             const posts = await Post.findAll({
                 order: [
-                    ['updated_at', 'DESC']
+                    ['created_at', 'DESC']
                 ],
                 attributes: ['id', 'text', 'created_at', 'updated_at'],
                 include: {
@@ -50,8 +50,11 @@ class PostsController {
             // if (!user) return res.status(404).json({})
 
             const post = await Post.findAll({
-                where: { id },
-                attributes: ['text', 'created_at', 'updated_at'],
+                where: { user_id: id },
+                order: [
+                    ['created_at', 'DESC']
+                ],
+                attributes: ['id', 'text', 'created_at', 'updated_at'],
                 include: {
                     association: 'user',
                     attributes: ['id', 'firstname', 'lastname']

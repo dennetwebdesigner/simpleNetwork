@@ -1,4 +1,4 @@
-import { baseUrl } from './helpers.js'
+import help from './index.js'
 
 class Api {
 
@@ -7,7 +7,7 @@ class Api {
     }
 
     async get(url, auth = null) {
-        this.connection.open('GET', `${baseUrl}/api${url}`)
+        this.connection.open('GET', `${help.baseUrl}/api${url}`)
         if (auth)
             this.connection.setRequestHeader(auth.key, auth.value);
         this.connection.send()
@@ -16,7 +16,7 @@ class Api {
 
     async post(url, data, auth = null) {
         const xmlhttp = new XMLHttpRequest(); // new HttpRequest instance 
-        xmlhttp.open("POST", `${baseUrl}/api${url}`);
+        xmlhttp.open("POST", `${help.baseUrl}/api${url}`);
         xmlhttp.setRequestHeader("Content-Type", "application/json");
         if (auth)
             xmlhttp.setRequestHeader(auth.key, auth.value);
@@ -27,9 +27,9 @@ class Api {
     async commom(flag, url, data = null, auth = null, permission = null) {
         const xmlhttp = new XMLHttpRequest(); // new HttpRequest instance 
         if (permission)
-            xmlhttp.open(flag, `${baseUrl}/api${url}`, true)
+            xmlhttp.open(flag, `${help.baseUrl}/api${url}`, true)
         else
-            xmlhttp.open(flag, `${baseUrl}/api${url}`)
+            xmlhttp.open(flag, `${help.baseUrl}/api${url}`)
 
 
         xmlhttp.setRequestHeader("Content-Type", "application/json");

@@ -25,7 +25,10 @@ class User extends Model {
     }
 
     static associate(models) {
+        this.hasMany(models.Observer, { foreignKey: 'from', as: 'observer-from' })
+        this.hasMany(models.Observer, { foreignKey: 'for', as: 'observer-for' })
         this.hasMany(models.Post, { foreignKey: 'user_id', as: 'posts' })
+
     }
 }
 

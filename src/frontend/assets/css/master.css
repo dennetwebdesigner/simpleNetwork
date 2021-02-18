@@ -13,19 +13,27 @@ header {
     padding: 0;
 }
 
-header h1 {
+header .logo-container {
     margin: auto;
-    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+header a {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
     font-size: 20px;
+    text-decoration: none;
+    color: white;
 }
 
 header .search {
     max-width: 950px;
-    width: 20vw;
-    min-width: 350px;
-    margin: 18px auto 0;
+    width: 250px;
+    min-width: 250px;
+    margin: -62px 0 0 16%;
     z-index: 1;
 }
 
@@ -106,9 +114,47 @@ header nav ul li a {
     color: #7220be;
 }
 
+.searchList {
+    width: 100%;
+    height: 83.31%;
+    background: white;
+    position: absolute;
+    top: 60px;
+    padding-top: 15px;
+}
+
+.searchList a {
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    color: #0b81af;
+}
+
+.searchList li {
+    width: 100%;
+    height: 38px;
+    background: white;
+    display: flex;
+    padding: 5px;
+    margin-bottom: 6px;
+    align-items: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.searchList li p {
+    margin-left: 5px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.searchList li img {
+    object-fit: cover;
+    width: 38px;
+    height: 38px;
+}
+
 .content-container {
     margin: auto;
-    height: 87vh;
+    height: 86.31%;
     min-width: 360px;
     width: 100vw;
 }
@@ -202,6 +248,36 @@ header nav ul li a {
     letter-spacing: -1px;
 }
 
+.content-container #profile #container-btn-observer p {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 27px auto 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.content-container #profile #container-btn-observer button {
+    width: 100%;
+    padding: 15px;
+    margin: 27px auto 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #0C80AF;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.content-container #profile #container-btn-observer button[data-type='cancel'],
+.content-container #profile #container-btn-observer button[data-type='del'] {
+    background-color: #ca210a;
+    margin-top: 0;
+}
+
+.content-container #profile #container-btn-observer button[data-type='acc'] {
+    background-color: #06b951;
+}
+
 .content-container #profile #switch-follow {
     min-width: 200px;
     width: 80%;
@@ -235,8 +311,9 @@ header nav ul li a {
 
 .content-container #home {
     display: block;
-    height: 80vh;
+    height: 98%;
     overflow-y: auto;
+    margin-bottom: 10px;
 }
 
 .content-container .create-post {
@@ -274,7 +351,7 @@ header nav ul li a {
 
 .content-container .create-post textarea {
     width: 100%;
-    height: 200px;
+    height: 142px;
     padding: 10px;
     font-size: 13pt;
     border: 1px solid #0C80AF;
@@ -295,6 +372,11 @@ header nav ul li a {
     list-style: none;
     padding: 15px;
     position: relative;
+}
+
+.content-container ul li section a {
+    color: #222;
+    text-decoration: none;
 }
 
 .content-container ul li section:first-child {
@@ -368,7 +450,6 @@ header nav ul li a {
 @media (min-width: 600px) {
     header h1 {
         margin-left: 63px;
-        margin-top: 10px;
         font-size: 25px;
     }
     header .search input {
