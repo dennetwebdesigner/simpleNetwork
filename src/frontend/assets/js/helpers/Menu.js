@@ -54,12 +54,15 @@ class Menu {
         // cria o input search
         const inputSearch = help.makeElement('input', section, { setId: 'search' })
         inputSearch.placeholder = 'pesquisar pessoas'
-        inputSearch.style.display = 'none'
+
+        if (document.body.clientWidth < 960)
+            inputSearch.style.display = 'none'
 
         // executa a ação de mostrar ou sumir do icone dependendo do tamanho da tela
         searchIcon.addEventListener('click', () => {
+
             inputSearch.style.display = inputSearch.style.display == 'none' ? 'block' : 'none'
-            Search.listSearchUserContainer.style.display = 'none'
+
         })
 
 

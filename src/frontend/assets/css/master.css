@@ -503,6 +503,9 @@ header nav ul li a {
     header .search #search-icon {
         display: none;
     }
+    header .search input {
+        display: block;
+    }
     header nav img {
         display: none;
     }
@@ -552,6 +555,14 @@ header nav ul li a {
         justify-content: center;
         display: flex;
         text-align: right;
+    }
+    .searchList {
+        width: 650px;
+        max-height: 400px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        overflow-y: auto;
     }
     .content-container {
         width: 100%;
