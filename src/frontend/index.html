@@ -12,27 +12,75 @@
 
 <body>
 
+    <!-- HEADER E MENU  -->
     <header></header>
 
+    <!-- INICIO CONTEUDO PRINCIPAL  -->
     <main class="content-container">
 
-        <form id='create-post' class="create-post">
-            <textarea name="createNewPost"></textarea>
-            <input type='submit' value='adicionar a coleção'>
-        </form>
+        <!-- INICIO PErfil -->
+        <div id='profile'>
+
+            <div class="header-card">
+
+                <div>
+                    <h4 id='profile-name'></h4>
+                    <h5 id='profile-birthday'></h5>
+                </div>
+
+            </div>
+
+            <img id='avatar-user' class='avatar-user'>
+
+            <!-- <div class='body-card'>
+                <article>
+                    <h4>1013</h4>
+                    <span>observando</span>
+                </article>
+                <article>
+                    <h4>1013</h4>
+                    <span>observado por</span>
+                </article>
+            </div> -->
+            <div id='container-btn-observer'></div>
+
+        </div>
+        <!-- FIM PErfil -->
+
+        <!-- INICIO LINHA DO TEMPO -->
+        <div id='home'>
+
+            <!-- CRIA NOVAS POSTAGENS -->
+            <form id='create-post' class="create-post">
+                <textarea name="createNewPost"></textarea>
+                <input type='submit' value='adicionar a coleção'>
+            </form>
+
+            <!-- CCRIA lista -->
+            <ul id='allPosts'></ul>
+
+        </div>
+        <!-- FIM LINHA DO TEMPO -->
 
 
-        <ul id='allPosts'></ul>
+
+        <!-- display para celulares e monitores pequenos -->
+        <nav>
+            <div class="active" id='timeline-display'><img id="timeline-icon" alt=""></div>
+            <div id='profile-display'><img id='profile-icon' alt=""></div>
+        </nav>
+
     </main>
+    <!-- FIM CONTEUDO PRINCIPAL  -->
 
 
-    <script src='./assets/js/menu.js' type='module'></script>
+    <!-- SCRIPTS  -->
     <script src='./assets/js/timeLine/index.js' type='module'></script>
+
 
     <!-- 
     <script src="./assets/js/socketConfig.js" type="module"></script>
     <script src="./assets/js/chat.js" type="module"></script> -->
-
 
 
 </body>

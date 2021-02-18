@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 header {
     min-width: 360px;
     width: 100%;
@@ -12,16 +13,27 @@ header {
     padding: 0;
 }
 
-header h1 {
+header .logo-container {
     margin: auto;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+header a {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
 }
 
 header .search {
     max-width: 950px;
-    width: 20vw;
-    min-width: 350px;
-    margin: 5px auto;
+    width: 250px;
+    min-width: 250px;
+    margin: -62px 0 0 16%;
     z-index: 1;
 }
 
@@ -30,7 +42,7 @@ header .search #search-icon {
     height: 25px;
     position: absolute;
     right: 20px;
-    top: 18px;
+    top: 20px;
     filter: invert(1);
 }
 
@@ -102,11 +114,206 @@ header nav ul li a {
     color: #7220be;
 }
 
+.searchList {
+    width: 100%;
+    height: 83.31%;
+    background: white;
+    position: absolute;
+    top: 60px;
+    padding-top: 15px;
+}
+
+.searchList a {
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    color: #0b81af;
+}
+
+.searchList li {
+    width: 100%;
+    height: 38px;
+    background: white;
+    display: flex;
+    padding: 5px;
+    margin-bottom: 6px;
+    align-items: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.searchList li p {
+    margin-left: 5px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.searchList li img {
+    object-fit: cover;
+    width: 38px;
+    height: 38px;
+}
+
 .content-container {
+    margin: auto;
+    height: 86.31%;
     min-width: 360px;
     width: 100vw;
-    margin: auto;
-    height: 90vh;
+}
+
+.content-container nav {
+    width: 50%;
+    margin: 10px auto 5px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.content-container nav div {
+    width: 20%;
+    margin-right: 10px;
+}
+
+.content-container nav div img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.content-container nav .active {
+    border-bottom: 2px solid #333;
+    transition: .5s;
+}
+
+.content-container hr {
+    width: 100%;
+    height: .50px;
+    border-color: #8583DD;
+}
+
+.content-container #profile {
+    width: 80%;
+    height: 487px;
+    margin: 15px auto 33px;
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border: 1px solid #0C80AF;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.content-container #profile .header-card {
+    width: 100%;
+    height: 230px;
+    text-align: center;
+    background-color: #7220be;
+    color: white;
+}
+
+.content-container #profile .header-card h4 {
+    font-size: 1.3em;
+    margin-top: 70px;
+}
+
+.content-container #profile .avatar-user {
+    width: 50%;
+    position: absolute;
+    top: 150px;
+    border: 7px solid white;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.content-container #profile .body-card {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-top: 74px;
+}
+
+.content-container #profile .body-card article h4 {
+    font-weight: bolder;
+    font-family: sans-serif;
+    font-size: 1.8em;
+    letter-spacing: 5px;
+}
+
+.content-container #profile .body-card article span {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    letter-spacing: -1px;
+}
+
+.content-container #profile #container-btn-observer p {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 27px auto 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.content-container #profile #container-btn-observer button {
+    width: 100%;
+    padding: 15px;
+    margin: 27px auto 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #0C80AF;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.content-container #profile #container-btn-observer button[data-type='cancel'],
+.content-container #profile #container-btn-observer button[data-type='del'] {
+    background-color: #ca210a;
+    margin-top: 0;
+}
+
+.content-container #profile #container-btn-observer button[data-type='acc'] {
+    background-color: #06b951;
+}
+
+.content-container #profile #switch-follow {
+    min-width: 200px;
+    width: 80%;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.content-container #profile #switch-follow h4 {
+    width: 100%;
+}
+
+.content-container #profile #switch-follow li:nth-child(2) {
+    background-color: #33333366;
+    border-right: 0;
+}
+
+.content-container #profile #switch-follow li {
+    text-align: center;
+    box-shadow: none;
+    width: 40%;
+    margin: 0;
+    height: 10px;
+    padding-top: 7px;
+    padding-bottom: 21px;
+    background-color: #0b81af;
+    color: white
+}
+
+.content-container #home {
+    display: block;
+    height: 98%;
+    overflow-y: auto;
+    margin-bottom: 10px;
 }
 
 .content-container .create-post {
@@ -118,17 +325,19 @@ header nav ul li a {
     list-style: none;
     padding: 15px 15px 50px;
     border-radius: 10px;
+    border: 1px solid #0C80AF;
 }
 
 .content-container .create-post input {
     float: right;
     display: block;
     padding: 15px;
-    font-size: 12pt;
+    font-size: 17px;
     font-weight: bold;
-    color: #7220be;
-    background-color: white;
+    color: #0C80AF;
+    background-color: transparent;
     border: none;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .content-container .create-post input:hover {
@@ -142,10 +351,10 @@ header nav ul li a {
 
 .content-container .create-post textarea {
     width: 100%;
-    height: 200px;
+    height: 142px;
     padding: 10px;
     font-size: 13pt;
-    border: 1px solid #7220be;
+    border: 1px solid #0C80AF;
 }
 
 .content-container ul {
@@ -163,6 +372,11 @@ header nav ul li a {
     list-style: none;
     padding: 15px;
     position: relative;
+}
+
+.content-container ul li section a {
+    color: #222;
+    text-decoration: none;
 }
 
 .content-container ul li section:first-child {
@@ -217,61 +431,155 @@ header nav ul li a {
 .content-container ul li h3 button {
     margin-right: 10px;
     padding: 15px 25px;
-    font-weight: bold;
-    border-radius: 25px;
     border: none;
-    color: black;
-    background-color: #00ff40e1;
+    color: #0C80AF;
+    background-color: transparent;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
 }
 
-.content-container ul li h3 button:nth-child(2) {
-    color: white;
-    background-color: #f00;
+.content-container ul li h3 button:nth-child(3) {
+    color: #555;
+    background-color: transparent;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
     padding: 15px 40px;
 }
 
 @media (min-width: 600px) {
     header h1 {
-        margin-left: 55px;
-        margin-top: 10px;
+        margin-left: 63px;
+        font-size: 25px;
     }
     header .search input {
         width: 83%
     }
+    .content-container {
+        margin-bottom: 10px;
+    }
+    .content-container nav {
+        display: block;
+        max-width: 10%;
+        flex-wrap: wrap;
+        justify-content: left;
+        left: -86%;
+        top: 40%;
+    }
+    .content-container nav div {
+        left: 0;
+        width: 100%;
+    }
+    .content-container nav .active {
+        border: none;
+    }
+    .content-container nav #profile-display {
+        margin-top: 15px;
+    }
+    .content-container hr {
+        display: none;
+    }
+    .content-container #profile {
+        width: 53%;
+        height: 440px;
+    }
+    .content-container #profile .avatar-user {
+        width: 176px;
+        height: 176px;
+        top: 136px;
+    }
+    .content-container #profile .body-card {
+        display: flex
+    }
+    .content-container #profile .body-card article {
+        width: 50%;
+    }
+    .content-container #home {
+        height: 100%;
+    }
 }
 
 @media (min-width: 960px) {
-    header h1 {
-        margin-left: 40px;
-    }
     header .search #search-icon {
         display: none;
-    }
-    header .search input {
-        display: block;
-        width: 100%;
-        margin-left: -20px;
-    }
-    header nav {
-        margin-right: 0;
     }
     header nav img {
         display: none;
     }
-    header nav ul {
-        display: block;
+    .content-container #profile {
         display: flex;
     }
-    .content-container .create-post {
-        box-shadow: none;
+    header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-areas: "logo" "search" "menu";
+        align-items: center;
+        justify-content: center;
     }
-}
-
-@media (min-width: 1366px) {
+    header .logo-container {
+        display: flex;
+        grid-area: "logo";
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    header h1 {
+        width: 194px;
+        margin: 0 auto;
+    }
     header .search {
-        margin-left: 4.5%;
+        grid-area: "search";
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+    }
+    header .search input {
+        display: flex;
+        margin: 10px auto 0;
+    }
+    header nav {
+        display: block;
+        grid-area: "menu";
+        width: 100%;
+    }
+    header nav ul {
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        text-align: right;
     }
     .content-container {
-        width: 45%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-areas: "logo" "search" "menu";
+        justify-content: center;
+        overflow-y: auto;
+        height: auto;
+    }
+    .content-container nav {
+        display: none;
+    }
+    .content-container #profile {
+        margin: 19px auto;
+        width: 80%;
+        max-width: 307px;
+    }
+    .content-container #home {
+        overflow-y: hidden;
+        width: 100%;
+    }
+    .content-container #home .create-post {
+        width: 100%;
+        min-width: 316px;
+        margin: 16px auto;
+    }
+    .content-container #home ul {
+        width: 100%;
     }
 }

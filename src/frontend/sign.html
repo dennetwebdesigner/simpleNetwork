@@ -16,73 +16,82 @@
         <p>Cadastro realizado com sucesso</p>
     </section>
 
-    <main>
+    <main id='items-wrapper'>
+
         <section>
             <h1>SimpleNetWork</h1>
-            <h2>Feita pensando em <span>VC</span></h2>
+            <p>Feito pensando em <span>VC</span></p>
         </section>
-        <aside>
 
-            <ul id='switch-form'>
-                <li class='switch-form-active' id='switch-login'>Entrar</li>
-                <li id='switch-register'>Cadastrar</li>
-            </ul>
-
-            <form id='login' class='form-register'>
-                <fieldset>
-                    <label for='username'>Usuário:</label>
-                    <input type='text' name='username' id='username'>
-                </fieldset>
-                <fieldset>
-                    <label for='password'>Senha:</label>
-                    <input type='password' id='password'>
-                </fieldset>
-                <fieldset>
-                    <input type="submit" value='entrar'>
-                </fieldset>
-            </form>
+        <form id='login' class='form-login'>
+            <fieldset>
+                <label for='username'>Usuário:</label>
+                <input type='text' name='username' id='username'>
+            </fieldset>
+            <fieldset>
+                <label for='password'>Senha:</label>
+                <input type='password' id='password'>
+            </fieldset>
+            <p id='register-display'>Cadastrar</p>
+            <p>Recuperar Senha</p>
+            <fieldset>
+                <input type="submit" value='entrar'>
+            </fieldset>
+        </form>
 
 
-            <form id='register' class='form-register'>
-                <fieldset>
-                    <label for='firstname'>Nome:</label>
-                    <input type='text' name='firstname' id='firstname'>
-                </fieldset>
-                <fieldset>
-                    <label for='lastname'>Sobrenome:</label>
-                    <input type='text' name='lastname' id='lastname'>
-                </fieldset>
-                <fieldset>
-                    <label for='birthday'>Data de aniversário:</label>
-                    <input type='text' name='birthday' id='birthday'>
-                </fieldset>
-                <fieldset>
-                    <label for='email'>E-mail:</label>
-                    <input type='email' name='email' id='email'>
-                </fieldset>
-                <fieldset>
-                    <label for='username'>nome de usuário:</label>
-                    <input type='text' name='username' id='username'>
-                </fieldset>
-                <fieldset>
-                    <label for='password'>Senha:</label>
-                    <input type='password' name='password' id='password'>
-                </fieldset>
-                <!-- <fieldset>
-                        <label for='confirm'>Confirme a senha:</label>
-                        <input type='password' id='confirm'>
-                    </fieldset> -->
-                <fieldset>
-                    <article></article>
-                    <input type="submit" value="Cadastrar">
-                </fieldset>
-            </form>
-        </aside>
+        <form id='register' class='form-register'>
+            <fieldset>
+                <label for='firstname'>Nome:</label>
+                <input type='text' name='firstname' id='firstname'>
+            </fieldset>
+            <fieldset>
+                <label for='lastname'>Sobrenome:</label>
+                <input type='text' name='lastname' id='lastname'>
+            </fieldset>
+            <fieldset>
+                <label for='birthday'>Data de aniversário:</label>
+                <input type='text' name='birthday' id='birthday'>
+            </fieldset>
+            <fieldset>
+                <label for='email'>E-mail:</label>
+                <input type='email' name='email' id='email'>
+            </fieldset>
+            <fieldset>
+                <label for='username'>nome de usuário:</label>
+                <input type='text' name='username' id='username'>
+            </fieldset>
+            <fieldset>
+                <label for='password'>Senha:</label>
+                <input type='password' name='password' id='password'>
+            </fieldset>
+            <!-- <fieldset>
+                            <label for='confirm'>Confirme a senha:</label>
+                            <input type='password' id='confirm'>
+                        </fieldset> -->
+            <p id='login-display'>entrar</p>
+            <fieldset>
+                <article></article>
+                <input type="submit" value="Cadastrar">
+            </fieldset>
+        </form>
+
+
+        <div class="items-controller">
+            <div id='switch-login' class="active"></div>
+            <div id='switch-register'></div>
+        </div>
+
+
+        </div>
+
+
     </main>
 
 
 
     <script src="./assets/js/sign/index.js" type="module"></script>
+    <script src="./assets/js/sign/display.js" type="module"></script>
 
 </body>
 

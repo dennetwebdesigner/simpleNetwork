@@ -1,6 +1,5 @@
-import Api from '../ajax.js'
-import MessagegLog from './MessagegLog.js'
-import MessageLog from './MessagegLog.js'
+import Api from '../helpers/ajax.js'
+import MessageLog from './MessageLog.js'
 
 class Sign {
 
@@ -31,8 +30,14 @@ class Sign {
         const password = e.target.elements.password
 
         // if inputs return false set validate in element message error
-        if (!firstname || !lastname || !birthday || !username || !email || !password) {
-            MessagegLog.error('Não pode haver campos vazios!')
+        if (!firstname.value ||
+            !lastname.value ||
+            !birthday.value ||
+            !username.value ||
+            !email.value ||
+            !password.value
+        ) {
+            MessageLog.error('Não pode haver campos vazios!')
             return false
         }
 
@@ -53,7 +58,7 @@ class Sign {
             // case server not response
             if (api.status == 500) {
 
-                MessagegLog.error('O servidor não esta respondendo, por favor tente novamente mais tarde!')
+                MessageLog.error('O servidor não esta respondendo, por favor tente novamente mais tarde!')
                 return false
 
             }
@@ -61,14 +66,14 @@ class Sign {
             // if email or username already register 
             if (api.status == 404) {
                 password.value = ''
-                MessagegLog.error('O email ou usuario já esta cadastrado!')
+                MessageLog.error('O email ou usuario já esta cadastrado!')
                 return false
 
             }
 
             // succesful new user create
             if (api.status == 200) {
-                MessagegLog.success('Seu cadastro foi realizado com sucesso!! Agora faça seu login...')
+                MessageLog.success('Seu cadastro foi realizado com sucesso!! Agora faça seu login...')
                 firstname.value = ''
                 lastname.value = ''
                 birthday.value = ''
@@ -96,7 +101,7 @@ class Sign {
 
         // if inputs return false set validate in element message error
         if (!username.value || !password.value) {
-            MessagegLog.error('Não pode haver campos vazios!')
+            MessageLog.error('Não pode haver campos vazios!')
             return false
         }
 
@@ -112,13 +117,13 @@ class Sign {
 
             // case server not response
             if (api.status == 500) {
-                MessagegLog.error('O servidor não esta respondendo, por favor tente novamente mais tarde!')
+                MessageLog.error('O servidor não esta respondendo, por favor tente novamente mais tarde!')
                 return false
             }
 
             // if email or username already register 
             if (api.status == 404) {
-                MessagegLog.error('O nome de usuário ou senha não esta cadastrado!')
+                MessageLog.error('O nome de usuário ou senha não esta cadastrado!')
                 password.value = ''
                 return false
             }

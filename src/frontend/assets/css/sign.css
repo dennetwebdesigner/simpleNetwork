@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 body {
-    background-color: #7220be;
+    background-color: #7121BF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,170 +32,164 @@ body {
 }
 
 main {
-    min-width: 300px;
-    width: 50%;
-    background-color: #fff;
+    width: 88.8vw;
+    min-width: 320px;
+    background-color: white;
+    margin: 13px auto 0;
     border-radius: 15px;
+    position: relative;
 }
 
 main section {
-    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 main section h1 {
+    color: #7221BA;
+    font-weight: 600;
+    font-family: 'Noto Sans', sans-serif;
     text-align: center;
-    margin-left: -20px;
-    color: #7220be;
-    font-size: 2em;
+    font-size: 28px;
+    width: 100%;
     margin-top: 30px;
+    line-height: 38px;
 }
 
-main section h2 {
-    display: block;
+main section p {
     text-align: center;
-    color: #e43b08;
-    font-size: 1.5em;
-    margin-left: 20px
+    font-family: 'Noto Sans', sans-serif;
+    color: #E04084;
+    font-weight: 600;
+    font-size: 18px;
 }
 
-main section h2 span {
-    color: #0b81af;
+main section p span {
+    color: #0C80AF;
 }
 
-main aside {
-    width: 100%;
-    position: relative;
-    padding-top: 20px;
+main form {
+    width: 80%;
+    height: 100%;
+    margin: 24px auto 70px;
 }
 
-main aside form {}
-
-#switch-form {
-    display: flex;
-    list-style: none;
-    position: absolute;
-    top: 20px;
-    right: 10px;
-}
-
-#switch-form li {
-    font-size: 1em;
-    border: 1px solid rgba(0, 0, 0, .4);
-    padding: 8px 15px;
-    color: #000;
-    transition: .5s;
-    background-color: rgba(51, 51, 51, .4);
-}
-
-#switch-form li:last-child {
-    border-left: none;
-}
-
-main aside ul#switch-form li.switch-form-active {
-    color: white;
-    background-color: #f60000b3
-}
-
-main aside form {
-    width: 100%;
-    padding: 10px;
-    margin: 40px auto 0px;
-}
-
-main aside form#register {
+main form.form-register {
     display: none;
 }
 
-main aside form h1 {
-    margin: 10px 0 10px;
-    color: #7220be;
-    font-size: 25pt;
-}
-
-main aside form h4 {
-    display: none;
-    margin-bottom: 15px;
-    background-color: #f60000b3;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-main aside form fieldset {
+main form fieldset {
     border: none;
-    width: 100%;
-    height: 60px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 30px;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
 }
 
-main aside form fieldset label {
+main form fieldset label {
+    color: #7121BF;
+    font-family: 'Noto Sans', sans-serif;
     width: 100%;
-    font-size: 1.1em;
-    font-weight: bold;
+    text-align: left;
+    margin: 18px 0;
 }
 
-main aside form fieldset input {
+main form fieldset input {
     width: 100%;
-    height: 45px;
-    border: 1px solid #7220be;
-    border-radius: 15px;
-    padding: 0 15px;
+    margin: 0 auto;
+    border: 1px solid #7121BF;
+    height: 42px;
+    border-radius: 8px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #7121BF;
+    padding: 0 5px;
 }
 
-main aside form fieldset input[type='submit'] {
-    background-color: #0b81af;
-    height: 60px;
-    font-size: 15pt;
-    color: white;
-    margin-top: 5px;
+main form p {
+    font-weight: 600;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    color: #0C80AF;
+    cursor: pointer;
 }
 
-@media (min-width: 600px) {
-    body {
-        padding: 0;
+main form input[type='submit'] {
+    margin-bottom: 15px;
+}
+
+main form #login-display {
+    margin: 30px 0 0px;
+    font-size: 14px;
+}
+
+main form #register-display {
+    margin-top: 30px;
+    margin-bottom: 16px;
+}
+
+main form fieldset input[type='submit'] {
+    margin-top: 20px;
+    background-color: #0c80af1a;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #0C80AF;
+    color: #0C80AF;
+    transition: 1s;
+}
+
+main .items-controller .active {
+    background-color: #0C80AF;
+    border: none;
+}
+
+.items-controller {
+    bottom: 20px;
+    z-index: 2;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    left: 0;
+    right: 0;
+}
+
+.items-controller div {
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.items-controller div:nth-child(1) {
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 960px) {
+    #notification {
+        top: 178px;
+        left: 54%;
     }
     main {
-        margin: 25px 0;
-    }
-}
-
-@media (min-width: 960px) {
-    main {
-        background-color: #f1f1f1;
         display: flex;
-        width: 80%;
-        max-width: 960px;
         align-items: center;
     }
     main section {
-        display: flex;
-        width: 55%;
-        padding: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: block;
     }
-    main aside {
-        width: 45%;
-        height: 55vh;
-        overflow-y: auto;
-    }
-    main section h1 {
-        font-size: 3em;
-        margin-left: 0;
-    }
-    main section h2 {
-        margin-left: 99px;
-    }
-    main aside form {
+    main form {
         width: 80%;
-        padding: 60px 10px 10px;
-        margin: 70px auto 20px;
+        margin-right: 20px;
+        overflow-y: auto;
+        max-height: 353px;
     }
-    main aside form#register {
-        padding-top: 20px;
-        margin: 10px auto;
+}
+
+@media screen and (min-width: 1280px) {
+    main {
+        max-width: 960px;
     }
 }

@@ -13,26 +13,30 @@ app.use('/static/js', express.static(resolve(__dirname, '..', '..', 'frontend', 
 app.use('/static/style', express.static(resolve(__dirname, '..', '..', 'frontend', 'assets', 'css')))
 
 const pathFiles = [
+    { path: '/perfil', file: 'profile' },
     { path: '/entrar', file: 'sign' },
+    { path: '/', file: 'index' },
 ]
+
+app.use(async(req, res, next) => {
+    let newUrl
+    if (req.query) {
+        newUrl = req.url.split('?')[0]
+    } else {
+        newUrl = req.url
+    }
+
+    const getRoute = pathFiles.filter(({ path }) => path == newUrl)
+    if (getRoute.length < 1)
+        next(res.render(`404.html`))
+    next()
+
+
+})
 
 pathFiles.map(({ path, file }) => {
     app.use(path, (req, res) => res.render(`${file}.html`))
 })
-
-// app.use(function(req, res, next) {
-//     let err = new Error('Not Found');
-//     if (err) {
-//         err.status = 404
-//         next(err)
-//     }
-// });
-
-app.use('/', (req, res) => {
-    res.render('index.html')
-})
-
-
 
 
 
